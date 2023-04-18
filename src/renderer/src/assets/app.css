@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /*
+
+    Theme: Gruvbox Material Hard
+    Github: https://github.com/sainnhe/gruvbox-material
+    Pallete: https://user-images.githubusercontent.com/58662350/213884009-87533cf3-e3c5-4d46-85f7-f6993b6dd887.png
+
+    */
+    --grey1: #141617;
+    --grey2: #1d2021;
+    --grey3: #282828;
+    --grey4: #32302f;
+    --grey5: #3c3836;
+    --grey6: #504945;
+    --grey7: #7c6f64;
+    --grey8: #928374;
+    --grey9: #a89984;
+    --grey10: #d4be98;
+    --grey11: #ddc7a1;
+
+    --green-dark: #32361a;
+    --green-blue: #333e34;
+    --green-light: #a9b665;
+
+    --red1: #3c1f1e;
+    --red2: #442e2d;
+    --red3: #ea6962;
+
+    --blue1: #0d3138;
+    --blue2: #2e3b3b;
+    --blue3: #7daea3;
+
+    --yellow1: #473c29;
+    --yellow2: #d8a557;
+
+    --orange: #e78a4e;
+    --aqua: #89b482;
+    --purple: #d3869b;
+}
+
+:root {
+    --border-radius: 5px;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--grey1);
+    color: var(--grey10);
+    overflow-y: hidden;
+    min-height: 100vh;
+    min-width: 320px;
+}
+
+.page-container {
+    background-color: var(--grey3);
+    max-width: 800px;
+    /* border: 1px dashed #888; */
+    min-height: calc(100vh - 3.2rem);
+    margin: 1.6rem auto;
+    padding: 2rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    font-size: 1.2rem;
+    color: var(--grey5);
+    padding: 7px 12px;
+    background-color: var(--grey11);
+    border: 2px solid var(--grey11);
+    border-radius: var(--border-radius);
+}
+
+.url-input {
+    outline: none;
+    max-width: 600px;
+    width: 100vw;
+}
+
+button[type="submit"] {
+    padding: 7px 12px;
+    font-size: 1.2rem;
+    margin-left: 0.6em;
+    background-color: var(--orange);
+    border: 2px solid var(--orange);
+    border-radius: var(--border-radius);
+}

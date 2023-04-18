@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+*.log*
+**/yarn.lock
+
+# Downloading files
+files/
+videoinfo.json
