@@ -77,22 +77,31 @@ input[type="text"] {
     font-size: 1.2rem;
     color: var(--grey5);
     padding: 7px 12px;
-    background-color: var(--grey11);
-    border: 2px solid var(--grey11);
+    background-color: var(--grey9);
+    border: 2px solid var(--grey9);
     border-radius: var(--border-radius);
+    width: 100%;
+    margin-bottom: 1.2rem;
+    outline: none;
 }
 
-.url-input {
-    outline: none;
-    max-width: 600px;
-    width: 100vw;
+input[type="text"]:focus {
+    background-color: var(--grey11);
+    border: 2px solid var(--grey11);
 }
 
 button[type="submit"] {
     padding: 7px 12px;
     font-size: 1.2rem;
-    margin-left: 0.6em;
     background-color: var(--orange);
     border: 2px solid var(--orange);
     border-radius: var(--border-radius);
+    outline: none;
+    font-weight: 400;
+    color: var(--grey5);
+}
+
+button[type="submit"]:focus {
+    background-color: var(--red3);
+    border: 2px solid var(--red3);
 }

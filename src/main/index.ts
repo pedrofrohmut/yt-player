@@ -1,9 +1,9 @@
 import { app, shell, BrowserWindow, ipcMain } from "electron"
 import { join } from "path"
-import { writeFileSync } from "fs"
 import { electronApp, optimizer, is } from "@electron-toolkit/utils"
 import icon from "../../resources/icon.png?asset"
-import youtubedl from "youtube-dl-exec"
+
+import { downloadVideoAndConvertToMp3 } from "./ipc-handlers"
 
 function createWindow(): void {
     // Create the browser window.
@@ -19,29 +19,7 @@ function createWindow(): void {
         }
     })
 
-    ipcMain.handle("downloadYT", async (_event: any, url: string) => {
-        console.log("Downloading.........")
-
-        const info = await youtubedl(url, {
-            dumpSingleJson: true,
-            noCheckCertificates: true,
-            noWarnings: true,
-            preferFreeFormats: true,
-            addHeader: ["referer:youtube.com", "user-agent:googlebot"]
-        })
-
-        // Write the info so youtube-dl can use it
-        writeFileSync("videoinfo.json", JSON.stringify(info))
-
-        console.log("Info saved")
-
-        await youtubedl.exec("", {
-            loadInfoJson: "videoinfo.json",
-            output: join(__dirname, "../../files/video.mp4")
-        })
-
-        return "Download Complete"
-    })
+    ipcMain.handle("downloadYT", downloadVideoAndConvertToMp3)
 
     mainWindow.on("ready-to-show", () => {
         mainWindow.show()

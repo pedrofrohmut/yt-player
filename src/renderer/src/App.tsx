@@ -14,8 +14,8 @@ const App = () => {
         if (!urlRef || !urlRef.current) return
         const url = urlRef.current.value
         const response = await window.mycustom.downloadYT(url)
-        // console.log(response)
 
+        setIsSubmitted(false)
         alert(response)
     }
 
@@ -23,7 +23,15 @@ const App = () => {
         <div className="page-container">
             <div className="page-title">YTPlayer</div>
             <form onSubmit={handleSubmit}>
-                <input type="text" className="url-input" placeholder="YT URL here" ref={urlRef} />
+                <input
+                    type="text"
+                    className="url-input"
+                    placeholder="YT URL here"
+                    ref={urlRef}
+                />
+                <input type="text" className="" placeholder="Artist" />
+                <input type="text" className="" placeholder="Music" />
+                <input type="text" className="" placeholder="Album" />
                 <button type="submit" disabled={isSubmitted}>
                     Download
                 </button>

@@ -22,11 +22,13 @@
     "dependencies": {
         "@electron-toolkit/preload": "^1.0.3",
         "@electron-toolkit/utils": "^1.0.2",
+        "ffmpeg": "^0.0.4",
         "youtube-dl-exec": "^2.4.1"
     },
     "devDependencies": {
         "@electron-toolkit/tsconfig": "^1.0.1",
         "@electron/notarize": "^1.2.3",
+        "@types/ffmpeg": "^1.0.4",
         "@types/node": "16.18.21",
         "@types/react": "18.0.30",
         "@types/react-dom": "18.0.11",
